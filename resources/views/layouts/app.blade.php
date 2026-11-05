@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>About – TechNews</title>
+    <title>TechNews – Tech news in five minutes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap"
@@ -445,244 +445,144 @@
                 }
             }
         }
-
-        /* About page */
-        .page-hero {
-            padding: 88px 0 56px;
-            max-width: 760px
-        }
-
-        .page-hero h1 {
-            font-size: clamp(40px, 6vw, 64px);
-            font-weight: 800
-        }
-
-        .page-hero p {
-            font-size: 19px;
-            color: var(--muted);
-            margin: 22px 0 0
-        }
-
-        .eyebrow {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--accent);
-            margin: 0 0 14px
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            padding-bottom: 72px
-        }
-
-        .stat {
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 24px
-        }
-
-        .stat b {
-            display: block;
-            font: 800 40px var(--head);
-            letter-spacing: -.03em
-        }
-
-        .stat span {
-            color: var(--muted);
-            font-size: 15px
-        }
-
-        .story {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 56px
-        }
-
-        .story h2 {
-            font-size: clamp(28px, 4vw, 40px);
-            font-weight: 700
-        }
-
-        .story p {
-            margin: 0 0 16px;
-            color: var(--muted)
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            counter-reset: s
-        }
-
-        .step {
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 24px;
-            background: var(--bg)
-        }
-
-        .step::before {
-            counter-increment: s;
-            content: counter(s);
-            display: grid;
-            place-items: center;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--accent);
-            color: var(--accent-ink);
-            font: 700 16px var(--head);
-            margin-bottom: 16px
-        }
-
-        .step h3 {
-            font-size: 20px;
-            margin-bottom: 8px
-        }
-
-        .step p {
-            margin: 0;
-            font-size: 15px;
-            color: var(--muted)
-        }
-
-        .team {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px
-        }
-
-        .member {
-            text-align: left
-        }
-
-        .avatar {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            font: 700 24px var(--head);
-            margin-bottom: 14px
-        }
-
-        .member h3 {
-            font-size: 19px
-        }
-
-        .member p {
-            margin: 2px 0 0;
-            font-size: 15px;
-            color: var(--muted)
-        }
-
-        @media (max-width:860px) {
-
-            .stats,
-            .steps,
-            .team,
-            .story {
-                grid-template-columns: 1fr
-            }
-
-            .story {
-                gap: 24px
-            }
-
-            .page-hero {
-                padding-top: 56px
-            }
-        }
     </style>
 </head>
 
 <body>
 
-        <x-header></x-header>
-    <main>
-        <div class="wrap page-hero">
-            <p class="eyebrow">About us</p>
-            <h1>We make technology news easy to read.</h1>
-            <p>TechNews started with a simple idea: people are busy, and good information should not take an hour to
-                find.</p>
-        </div>
+    <x-header></x-header>
 
-        <div class="wrap stats">
-            <div class="stat"><b>5 min</b><span>to read the daily digest</span></div>
-            <div class="stat"><b>20+</b><span>trusted sources checked every day</span></div>
-            <div class="stat"><b>100%</b><span>free for every reader</span></div>
-        </div>
+    @yield('content')
 
-        <section class="why">
-            <div class="wrap story">
-                <h2>Our story</h2>
-                <div>
-                    <p>We are a small team of developers, teachers and writers who love technology. We kept seeing the
-                        same problem: too many articles, too much noise, and not enough time.</p>
-                    <p>So we built TechNews. It gathers stories from trusted sources, removes repeats, and gives you a
-                        short, clear summary of each one, written in plain language.</p>
-                    <p>Whether you are a student, a developer or just curious, our goal is the same: help you understand
-                        what changed in tech today.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="wrap">
-            <div class="head">
-                <h2>How it works</h2>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <h3>We collect</h3>
-                    <p>New articles arrive automatically from trusted news feeds throughout the day.</p>
-                </div>
-                <div class="step">
-                    <h3>We simplify</h3>
-                    <p>Each story is shortened to the key points, so you know what happened and why it matters.</p>
-                </div>
-                <div class="step">
-                    <h3>You read</h3>
-                    <p>Browse the website or get the best stories in one short email each morning.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="wrap">
-            <div class="head">
-                <h2>The team</h2>
-            </div>
-            <div class="team">
-                <div class="member">
-                    <div class="avatar" style="background:#dbe4ff">A</div>
-                    <h3>Your Name</h3>
-                    <p>Founder and developer</p>
-                </div>
-                <div class="member">
-                    <div class="avatar" style="background:#d9f2e6">B</div>
-                    <h3>Team Member</h3>
-                    <p>Editor</p>
-                </div>
-                <div class="member">
-                    <div class="avatar" style="background:#ffe3dc">C</div>
-                    <h3>Team Member</h3>
-                    <p>Designer</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta wrap">
-            <h2>Read less. Know more.</h2>
-            <p>Get the daily digest and catch up on technology in five minutes.</p>
-            <a href="index.html#subscribe" class="btn">Subscribe for free</a>
-        </section>
-    </main>
-
-    <x-footer />
+    <x-footer></x-footer>
 
     <script>
+        // Sample stories – replace with your own posts or load them from your backend.
+        var POSTS = [{
+                t: "AI",
+                h: "Open-source models are catching up fast",
+                p: "Free models now handle many tasks that needed paid tools a year ago.",
+                m: "4 min read",
+                c: "#dbe4ff"
+            },
+            {
+                t: "Web",
+                h: "Browsers get smarter about tracking",
+                p: "New built-in controls make it easier to keep your browsing private.",
+                m: "3 min read",
+                c: "#d9f2e6"
+            },
+            {
+                t: "Security",
+                h: "Password managers explained simply",
+                p: "What they do, why they are safer, and how to switch in ten minutes.",
+                m: "5 min read",
+                c: "#ffe3dc"
+            },
+            {
+                t: "Gadgets",
+                h: "Choosing a laptop for coding in 2026",
+                p: "RAM, battery life, and screen: the three specs that matter most.",
+                m: "6 min read",
+                c: "#fff1cc"
+            },
+            {
+                t: "AI",
+                h: "How to use AI tools without losing your skills",
+                p: "Practical habits for students and developers who use AI every day.",
+                m: "4 min read",
+                c: "#e6dcff"
+            },
+            {
+                t: "Web",
+                h: "Why fast websites win more readers",
+                p: "A few small changes to images and fonts can cut load time in half.",
+                m: "3 min read",
+                c: "#d6f0f7"
+            }
+        ];
+        var TOPICS = ["All", "AI", "Web", "Security", "Gadgets"];
+        var grid = document.getElementById("grid"),
+            chips = document.getElementById("chips");
+
+        function render(topic) {
+            var list = POSTS.filter(function(p) {
+                return topic === "All" || p.t === topic;
+            });
+            grid.innerHTML = list.length ? list.map(function(p) {
+                return '<article class="post"><div class="thumb" style="background:' + p.c +
+                    '"></div><div class="in">' +
+                    '<span class="tag">' + p.t + '</span><h3>' + p.h + '</h3><p>' + p.p +
+                    '</p><span class="meta">' + p.m + '</span></div></article>';
+            }).join("") : '<p class="empty">No stories in this topic yet.</p>';
+        }
+        TOPICS.forEach(function(t, i) {
+            var b = document.createElement("button");
+            b.className = "chip";
+            b.textContent = t;
+            b.setAttribute("aria-pressed", i === 0);
+            b.addEventListener("click", function() {
+                chips.querySelectorAll(".chip").forEach(function(c) {
+                    c.setAttribute("aria-pressed", c === b);
+                });
+                render(t);
+            });
+            chips.appendChild(b);
+        });
+        render("All");
+
+        // Subscribe forms: simple email check (connect to your mail service or Laravel route later)
+        document.querySelectorAll("[data-sub]").forEach(function(f) {
+            f.addEventListener("submit", function(e) {
+                e.preventDefault();
+                var note = f.parentNode.querySelector("[data-note]"),
+                    v = f.email.value.trim();
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+                    note.className = "note err";
+                    note.textContent = "Enter a valid email address, like you@example.com.";
+                    return;
+                }
+                note.className = "note ok";
+                note.textContent = "You’re subscribed. Check your inbox tomorrow morning.";
+                f.reset();
+            });
+        });
+        document.getElementById("yr").textContent = new Date().getFullYear();
+    </script>
+
+     <script>
+        // Contact form: checks each field, then shows a success message (connect to your backend later)
+        var form = document.getElementById("contactForm"),
+            note = document.getElementById("formNote");
+
+        function check(id, ok, msg) {
+            var f = document.getElementById(id),
+                box = f.closest(".field");
+            box.classList.toggle("bad", !ok);
+            box.querySelector(".hint").textContent = ok ? "" : msg;
+            return ok;
+        }
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            var r = [
+                check("name", form.name.value.trim().length >= 2, "Please enter your name."),
+                check("email", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim()),
+                    "Enter a valid email, like you@example.com."),
+                check("message", form.message.value.trim().length >= 10, "Please write at least 10 characters.")
+            ];
+            if (r.indexOf(false) !== -1) {
+                note.className = "note err";
+                note.textContent = "Please fix the fields marked above.";
+                return;
+            }
+            note.className = "note ok";
+            note.textContent = "Thank you! Your message was sent. We will reply soon.";
+            form.reset();
+        });
+        document.getElementById("yr").textContent = new Date().getFullYear();
+    </script>
+
+      <script>
         document.getElementById("yr").textContent = new Date().getFullYear();
     </script>
 </body>

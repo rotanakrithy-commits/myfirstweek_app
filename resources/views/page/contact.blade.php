@@ -1,14 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Contact – TechNews</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap"
-        rel="stylesheet">
+@section('content')
+
+    <main>
+        <div class="wrap page-hero">
+            <p class="eyebrow">Contact</p>
+            <h1>We’d love to hear from you.</h1>
+            <p>Have a question, a story tip or an idea? Send us a message and we will reply within two working days.</p>
+        </div>
+
+        <div class="wrap contact">
+            <div class="card">
+                <form id="contactForm" novalidate>
+                    <div class="two">
+                        <div class="field"><label for="name">Your name</label><input id="name" name="name"
+                                autocomplete="name"><span class="hint"></span></div>
+                        <div class="field"><label for="email">Email</label><input id="email" name="email"
+                                type="email" autocomplete="email" placeholder="you@example.com"><span
+                                class="hint"></span></div>
+                    </div>
+                    <div class="field">
+                        <label for="topic">Topic</label>
+                        <select id="topic" name="topic">
+                            <option>General question</option>
+                            <option>Story tip</option>
+                            <option>Advertising or partnership</option>
+                            <option>Report a problem</option>
+                        </select>
+                        <span class="hint"></span>
+                    </div>
+                    <div class="field"><label for="message">Message</label>
+                        <textarea id="message" name="message"></textarea><span class="hint"></span>
+                    </div>
+                    <button class="btn" type="submit">Send message</button>
+                    <p class="note" id="formNote" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <aside class="info" aria-label="Contact details">
+                <div class="item"><small>Email</small><b>hello@technews.com</b>
+                    <p>For questions and story tips</p>
+                </div>
+                <div class="item"><small>Phone</small><b>+000 00 000 000</b>
+                    <p>Monday to Friday, 9:00 – 17:00</p>
+                </div>
+                <div class="item"><small>Address</small><b>Your Street, Your City</b>
+                    <p>Your Country</p>
+                </div>
+            </aside>
+        </div>
+
+        <section class="why">
+            <div class="wrap">
+                <div class="head">
+                    <h2>Common questions</h2>
+                </div>
+                <div class="faq">
+                    <details>
+                        <summary>Is TechNews free?</summary>
+                        <p>Yes. Reading the website and receiving the daily email are both free.</p>
+                    </details>
+                    <details>
+                        <summary>How do I unsubscribe from the email?</summary>
+                        <p>Every email has an unsubscribe link at the bottom. One click is enough.</p>
+                    </details>
+                    <details>
+                        <summary>Can I send you a story to cover?</summary>
+                        <p>Of course. Choose “Story tip” in the form above and include a link.</p>
+                    </details>
+                    <details>
+                        <summary>How fast do you reply?</summary>
+                        <p>Usually within two working days.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <style>
         :root {
             --bg: #ffffff;
@@ -620,109 +688,4 @@
             }
         }
     </style>
-</head>
-
-<body>
-
-        <x-header></x-header>
-
-    <main>
-        <div class="wrap page-hero">
-            <p class="eyebrow">Contact</p>
-            <h1>We’d love to hear from you.</h1>
-            <p>Have a question, a story tip or an idea? Send us a message and we will reply within two working days.</p>
-        </div>
-
-        <div class="wrap contact">
-            <div class="card">
-                <form id="contactForm" novalidate>
-                    <div class="two">
-                        <div class="field"><label for="name">Your name</label><input id="name" name="name"
-                                autocomplete="name"><span class="hint"></span></div>
-                        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email"
-                                autocomplete="email" placeholder="you@example.com"><span class="hint"></span></div>
-                    </div>
-                    <div class="field">
-                        <label for="topic">Topic</label>
-                        <select id="topic" name="topic">
-                            <option>General question</option>
-                            <option>Story tip</option>
-                            <option>Advertising or partnership</option>
-                            <option>Report a problem</option>
-                        </select>
-                        <span class="hint"></span>
-                    </div>
-                    <div class="field"><label for="message">Message</label><textarea id="message"
-                            name="message"></textarea><span class="hint"></span></div>
-                    <button class="btn" type="submit">Send message</button>
-                    <p class="note" id="formNote" aria-live="polite"></p>
-                </form>
-            </div>
-
-            <aside class="info" aria-label="Contact details">
-                <div class="item"><small>Email</small><b>hello@technews.com</b>
-                    <p>For questions and story tips</p>
-                </div>
-                <div class="item"><small>Phone</small><b>+000 00 000 000</b>
-                    <p>Monday to Friday, 9:00 – 17:00</p>
-                </div>
-                <div class="item"><small>Address</small><b>Your Street, Your City</b>
-                    <p>Your Country</p>
-                </div>
-            </aside>
-        </div>
-
-        <section class="why">
-            <div class="wrap">
-                <div class="head">
-                    <h2>Common questions</h2>
-                </div>
-                <div class="faq">
-                    <details>
-                        <summary>Is TechNews free?</summary>
-                        <p>Yes. Reading the website and receiving the daily email are both free.</p>
-                    </details>
-                    <details>
-                        <summary>How do I unsubscribe from the email?</summary>
-                        <p>Every email has an unsubscribe link at the bottom. One click is enough.</p>
-                    </details>
-                    <details>
-                        <summary>Can I send you a story to cover?</summary>
-                        <p>Of course. Choose “Story tip” in the form above and include a link.</p>
-                    </details>
-                    <details>
-                        <summary>How fast do you reply?</summary>
-                        <p>Usually within two working days.</p>
-                    </details>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <x-footer />
-
-    <script>
-        // Contact form: checks each field, then shows a success message (connect to your backend later)
-        var form = document.getElementById("contactForm"), note = document.getElementById("formNote");
-        function check(id, ok, msg) {
-            var f = document.getElementById(id), box = f.closest(".field");
-            box.classList.toggle("bad", !ok);
-            box.querySelector(".hint").textContent = ok ? "" : msg;
-            return ok;
-        }
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            var r = [
-                check("name", form.name.value.trim().length >= 2, "Please enter your name."),
-                check("email", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim()), "Enter a valid email, like you@example.com."),
-                check("message", form.message.value.trim().length >= 10, "Please write at least 10 characters.")
-            ];
-            if (r.indexOf(false) !== -1) { note.className = "note err"; note.textContent = "Please fix the fields marked above."; return; }
-            note.className = "note ok"; note.textContent = "Thank you! Your message was sent. We will reply soon.";
-            form.reset();
-        });
-        document.getElementById("yr").textContent = new Date().getFullYear();
-    </script>
-</body>
-
-</html>
+@endsection
